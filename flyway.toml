@@ -1,0 +1,29 @@
+databaseType = "PostgreSql"
+name = "knight_poc"
+id = "fa0e1da6-a096-469f-974b-cee603dd4ddb"
+
+[flywayDesktop]
+developmentEnvironment = "development"
+shadowEnvironment = "shadow"
+schemaModel = "./schema-model"
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.postgresql.options.ignores]
+ignoreNewlinesInTextObjects = "off"
+
+[flyway]
+mixed = true
+outOfOrder = true
+locations = [ "filesystem:migrations" ]
+validateMigrationNaming = true
+
+  [flyway.check]
+  majorTolerance = 0
+
+[environments.target1]
+url = "jdbc:postgresql://35.244.117.143:5432/postgres"
+schemas = [ "public" ]
+user = "postgres"
+password = "Welcome123&"
